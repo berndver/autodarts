@@ -23,7 +23,7 @@ services:
       devices:
         - /dev/snd:/dev/snd
       env_file:
-        - ./autodarts-caller.env
+        - ./autodarts.env
       volumes:
         - ./autodarts-caller/media:/usr/share/autodarts-caller/media
         - ./autodarts-caller/media-shared:/usr/share/autodarts-caller/media-shared
