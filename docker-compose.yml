@@ -15,7 +15,7 @@ services:
         - ./autodarts:/root/.config/autodarts
           
     autodarts-caller:
-      image: lbormann/autodarts-caller
+      image: lbormann/autodarts-caller:latest
       container_name: autodarts-caller
       restart: unless-stopped
       ports:
@@ -28,3 +28,9 @@ services:
         - ./autodarts-caller/media:/usr/share/autodarts-caller/media
         - ./autodarts-caller/media-shared:/usr/share/autodarts-caller/media-shared
         - ./autodarts-caller:/usr/share/autodarts-caller
+          
+    watchtower:
+      image: containrrr/watchtower
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /root/.docker/config.json:/config.json
