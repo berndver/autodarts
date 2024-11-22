@@ -14,6 +14,7 @@
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    restart: unless-stopped
     environment:
       - WATCHTOWER_LABEL_ENABLE=true
     volumes:
