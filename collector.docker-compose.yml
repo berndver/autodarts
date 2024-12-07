@@ -4,7 +4,5 @@ services:
     container_name: collector
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: ./config.yml
-        target: /etc/opentelemetry-collector/config.yml
+      - ./collector-config.yml:/etc/opentelemetry-collector/config.yml
     command: --config=/etc/opentelemetry-collector/config.yml
