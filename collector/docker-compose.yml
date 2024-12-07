@@ -1,0 +1,12 @@
+services:
+  collector:
+    image: otel/opentelemetry-collector
+    container_name: collector
+    restart: unless-stopped
+    volumes:
+      - collector_data:/etc/opentelemetry-collector
+    command: --config=/etc/opentelemetry-collector/config.yml
+
+volumes:
+  collector_data:
+    name: "collector_data"

@@ -1,0 +1,41 @@
+receivers:
+  hostmetrics:
+    collection_interval: 1m
+    scrapers:
+      cpu:
+        metrics:
+          system.cpu.utilization:
+            enabled: true
+      disk:
+      load:
+      memory:
+      network:
+
+processors:
+  # Data sources: traces, metrics, logs
+  memory_limiter:
+    check_interval: 5s
+    limit_mib: 1000
+
+  batch:
+    timeout: 5s
+
+  resource:
+    attributes:
+      - key: service.name
+        value: ${env:OT_SERVICE_NAME}
+        action: upsert
+
+exporters:
+  otlphttp:
+    endpoint: ${env:OT_OTLP_ENDPOINT}
+    headers:
+      authorization: Basic ${env:OT_BASIC_CREDENTIALS}
+
+
+service:
+  pipelines:
+    metrics:
+      receivers: [ hostmetrics ]
+      processors: [ memory_limiter, batch, resource ]
+      exporters: [ otlphttp ]
