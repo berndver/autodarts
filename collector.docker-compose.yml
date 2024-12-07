@@ -1,8 +1,14 @@
+configs:
+  collector_config:
+    file: ./collector-config.yml
+    external: true
+
 services:
   collector:
     image: otel/opentelemetry-collector
     container_name: collector
     restart: unless-stopped
-    volumes:
-      - ./collector-config.yml:/etc/opentelemetry-collector/config.yml
-    command: --config=/etc/opentelemetry-collector/config.yml
+    configs:
+      - source: collector_config
+        target: /etc/opentelemetry-collector
+    command: --config=/etc/opentelemetry-collector/collector-config.yml
