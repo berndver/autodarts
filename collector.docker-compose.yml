@@ -3,6 +3,10 @@ services:
     image: otel/opentelemetry-collector
     container_name: collector
     restart: unless-stopped
+    environment:
+      - OT_SERVICE_NAME=${OT_SERVICE_NAME}
+      - OT_OTLP_ENDPOINT=${OT_OTLP_ENDPOINT}
+      - OT_AUTH_HEADER=${OT_AUTH_HEADER}
     volumes:
       - collector_data:/etc/opentelemetry-collector
     command: --config=/etc/opentelemetry-collector/config.yml
