@@ -30,7 +30,7 @@ exporters:
   otlphttp:
     endpoint: ${env:OT_OTLP_ENDPOINT}
     headers:
-      authorization: Basic ${env:OT_BASIC_CREDENTIALS}
+      authorization: ${env:OT_AUTH_HEADER}
 
 
 service:
