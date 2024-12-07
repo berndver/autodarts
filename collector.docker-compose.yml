@@ -4,5 +4,9 @@ services:
     container_name: collector
     restart: unless-stopped
     volumes:
-      - ./collector:/etc/opentelemetry-collector
+      - collector_data:/etc/opentelemetry-collector
     command: --config=/etc/opentelemetry-collector/config.yml
+
+volumes:
+  collector_data:
+    name: "collector_data"
