@@ -23,14 +23,14 @@ processors:
   resource:
     attributes:
       - key: service.name
-        value: ${env:OT_SERVICE_NAME}
+        value: $${env:OT_SERVICE_NAME}
         action: upsert
 
 exporters:
   otlphttp:
-    endpoint: ${env:OT_OTLP_ENDPOINT}
+    endpoint: $${env:OT_OTLP_ENDPOINT}
     headers:
-      authorization: Basic ${env:OT_AUTH_HEADER}
+      authorization: Basic $${env:OT_AUTH_HEADER}
 
 
 service:
