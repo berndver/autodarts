@@ -4,6 +4,7 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 SHELL=/bin/bash
 
-@reboot root /autodarts/auto-update.sh > /autodarts/autodartscron.log
-@midnight root /autodarts/auto-update.sh > /autodarts/autodartscron.log
+@reboot root /bin/bash /autodarts/auto-update.sh > /autodarts/autodartscron.log
+@reboot root echo running-autodarts-crontab
+@midnight root /bin/bash /autodarts/auto-update.sh > /autodarts/autodartscron.log
 
