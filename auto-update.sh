@@ -5,4 +5,4 @@ cd /autodarts
 git pull origin main
 
 # Restart Docker Compose
-sudo docker-compose up --force-recreate --build -d -f ./docker-compose.yml -f ./collector/docker-compose.yml
+sudo docker compose up --force-recreate --build -d -f ./docker-compose.yml -f ./collector/docker-compose.yml
