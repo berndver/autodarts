@@ -1,0 +1,9 @@
+# /etc/cron.d/autodartscron: crontab entries for the autodarts system
+
+# Umgebungsvariablen
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin
+
+@reboot root /autodarts/auto-update.sh > /dev/null
+@midnight root /autodarts/auto-update.sh > /dev/null
+
