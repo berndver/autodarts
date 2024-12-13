@@ -2,7 +2,7 @@
 
 # Umgebungsvariablen
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-SHELL=/bin
+SHELL=/bin/bash
 
 @reboot root /autodarts/auto-update.sh
 @midnight root /autodarts/auto-update.sh
