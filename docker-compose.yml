@@ -2,7 +2,7 @@
   autodarts:
     image: michvllni/autodarts:latest
     container_name: autodarts
-    restart: unless-stopped
+    restart: always
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     ports:
@@ -19,7 +19,7 @@
       - WATCHTOWER_LABEL_ENABLE=true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 3600
+    command: --run-once --interval 300
 
 volumes:
   autodarts_config:
