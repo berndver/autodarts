@@ -1,1 +1,1 @@
-cp ./autodartscron /etc/corn.d/
+cp ./autodartscron /etc/cron.d/
