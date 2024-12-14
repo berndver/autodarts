@@ -1,0 +1,11 @@
+[Unit]
+Description=Updates the git repository of autodarts
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/autodarts
+ExecStart=/bin/git pull origin main
+
+[Install]
+Alias=autodarts-repository-updater.service
