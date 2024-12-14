@@ -1,10 +1,12 @@
 [Unit]
 Description=Starts watchtower to update the autodarts service
-Requires=network-online.target docker.service autodarts-repository-updater.service
-After=network-online.target docker.service autodarts-repository-updater.service
+Requires=docker.service autodarts-repository-updater.service
+After=docker.service autodarts-repository-updater.service
 
 [Service]
 ExecStart=/bin/docker run -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once --label-enable
 
 [Install]
 Alias=autodarts-container-updater.service
+WantedBy=docker.service autodarts-repository-updater.service
+RequiredBy=docker.service autodarts-repository-updater.service
