@@ -1,0 +1,13 @@
+[Unit]
+Description=Updates the autodarts services and fetches remote changes
+Requires=network-online.target default.target docker.service
+After=network-online.target default.target docker.service
+
+[Service]
+WorkingDirectory=/autodarts
+ExecStart=/bin/bash update.sh
+
+[Install]
+Alias=autodarts-repository-updater.service
+WantedBy=network-online.target default.target docker.service
+RequiredBy=network-online.target default.target docker.service

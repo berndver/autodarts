@@ -1,6 +1,3 @@
-# change into directory
-cd /autodarts
-
 ## pull the latest changes
 git pull origin main
 
