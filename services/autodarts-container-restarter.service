@@ -1,0 +1,13 @@
+[Unit]
+Description=Restarts container after git changes
+Requires=docker.service autodarts-repository-updater.service
+After=docker.service autodarts-repository-updater.service
+
+[Service]
+WorkingDirectory=/autodarts
+ExecStart=/bin/docker compose up --force-recreate -d
+
+[Install]
+Alias=autodarts-container-restarter.service
+WantedBy=docker.service autodarts-repository-updater.service
+RequiredBy=docker.service autodarts-repository-updater.service
