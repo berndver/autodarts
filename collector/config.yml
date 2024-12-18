@@ -1,6 +1,7 @@
 receivers:
   hostmetrics:
     collection_interval: 1m
+    root_path: /hostfs
     scrapers:
       cpu:
         metrics:

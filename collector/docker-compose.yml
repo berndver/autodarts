@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./config.yml:/etc/opentelemetry-collector/config.yml
+      - /:/hostfs:ro
     command: --config=/etc/opentelemetry-collector/config.yml
     env_file:
       - .env
