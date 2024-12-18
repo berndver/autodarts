@@ -9,6 +9,9 @@ receivers:
       disk:
       load:
       memory:
+        metrics:
+          system.memory.utilization:
+            enabled: true
       network:
 
 processors:
