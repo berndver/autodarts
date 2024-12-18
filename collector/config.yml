@@ -6,13 +6,14 @@ receivers:
         metrics:
           system.cpu.utilization:
             enabled: true
-      disk:
-      load:
       memory:
         metrics:
           system.memory.utilization:
             enabled: true
-      network:
+      filesystem:
+        metrics:
+          system.filesystem.utilization:
+            enabled: true
 
 processors:
   # Data sources: traces, metrics, logs
