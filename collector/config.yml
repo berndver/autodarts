@@ -30,6 +30,12 @@ processors:
       - key: service.name
         value: ${env:OT_SERVICE_NAME}
         action: upsert
+      - key: service.instance.id
+        value: ${env:OT_SERVICE_NAME}
+        action: upsert
+      - key: service.namespace
+        value: autodarts
+        action: upsert
 
 exporters:
   otlphttp:
