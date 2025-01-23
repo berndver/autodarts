@@ -6,7 +6,7 @@ wget https://github.com/rustdesk/rustdesk/releases/download/1.3.5/rustdesk-1.3.5
 sudo apt install ./rustdesk-1.3.5-x86_64.deb
 ````
 Konfiguration:
-- Netzwerk: rustdesk.berndverwohlt.de
+- Netzwerk: rustdesk.*.de
 
 3. Install Docker
 
